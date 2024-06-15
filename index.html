@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           <title>Unit converter</title>
+           <link rel="stylesheet" href="style.css"> 
+           <style>
+            @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+            </style>
+    </head>
+    <body>
+         <div class="container">
+            <h1>Unit Converter</h1>
+            <h3>temp | weight | length | time | angle</h3>
+            <select id="unitselect">
+                <h3>SELECT UNITS</h3>
+                <option value="">--SELECT--</option>
+                <option value="temperature">Temperature</option>
+                <option value="weight">Weight</option>
+                <option value="length">Length</option>
+                <option value="time">Time</option>
+                <option value="angle">Angle</option>
+
+            </select>
+            <div class="conversion-box" id="tempbox">
+                <h2>Temperature</h2>
+                <input class="input" type="number" placeholder="Enter value"/>
+                <select class="from" id="fromtemp">
+                    <option value="celcius" >Celcius</option>
+                    <option value="farenhiet" >Farenhiet</option>
+                    <option value="kelvin" >Kelvin</option>
+                </select>
+                <span class="arrow">➡</span> 
+                <select class="to" id="totemp">
+                    <option value="celcius" >Celcius</option>
+                    <option value="farenhiet" >Farenhiet</option>
+                    <option value="kelvin" >Kelvin</option>
+                </select>
+                <br/>
+                <br/>
+                <button class="btn" onclick="tempfn()">CONVERT</button>
+                <br/>
+                <br/>
+                <div class="res"><div id="resultboxt"></div></div>
+
+            </div>
+            <div class="conversion-box" id="weightbox">
+                <h2>Weight</h2>
+                <input class="input" type="number" placeholder="Enter value"/>
+                <select class="from" id="fromweight">
+                    <option value="pound">Pounds</option>
+                    <option value="megatonne">Megatonne</option>
+                    <option value="tonne">Tonne</option>
+                    <option value="kilogram">Kilograms</option>
+                    <option value="gram">Grams</option>
+                    <option value="milligram">Milligrams</option>
+                    <option value="microgram">Micrograms</option>
+                </select>
+                <span class="arrow">➡</span> 
+                <select class="to" id="toweight">
+                    <option value="pound">Pounds</option>
+                    <option value="megatonne">Megatonne</option>
+                    <option value="tonne">Tonne</option>
+                    <option value="kilogram">Kilograms</option>
+                    <option value="gram">Grams</option>
+                    <option value="milligram">Milligrams</option>
+                    <option value="microgram">Micrograms</option>
+                </select>
+                <br/>
+                <br/>
+                <button class="btn" onclick="weightfn()">CONVERT</button>
+                <br/>
+                <br/>
+                <div class="res"><div id="resultboxwt"></div></div>
+
+            </div>
+
+            <div class="conversion-box" id="lengthbox">
+                <h2>Length</h2>
+                <input class="input" type="number" placeholder="Enter value"/>
+                <select class="from" id="fromlength">
+                    <option value="mile">Mile</option>
+                    <option value="yard">Yard</option>
+                    <option value="foot">Foot</option>
+                    <option value="kilometer">Kilometre</option>
+                    <option value="meter">Metre</option>
+                    <option value="centimeter">Centimetre</option>
+                    <option value="millimeter">Millimetre</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <span class="arrow">➡</span> 
+                <select class="to" id="tolength">
+                    <option value="mile">Mile</option>
+                    <option value="yard">Yard</option>
+                    <option value="foot">Foot</option>
+                    <option value="kilometer">Kilometre</option>
+                    <option value="meter">Metre</option>
+                    <option value="centimeter">Centimetre</option>
+                    <option value="millimeter">Millimetre</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <br/>
+                <br/>
+                <button class="btn" onclick="lengthfn()">CONVERT</button>
+                <br/>
+                <br/>
+                <div class="res"><div id="resultboxlen"></div></div>
+
+            </div>
+
+            <div class="conversion-box" id="timebox">
+                <h2>Time</h2>
+                <input class="input" type="number" placeholder="Enter value"/>
+                <select class="from" id="fromtime">
+                    <option value="year">Year</option>
+                    <option value="day">Day</option>
+                    <option value="hour">Hour</option>
+                    <option value="minute">Minute</option>
+                    <option value="second">Seconds</option>
+                    <option value="millisecond">Milliseconds</option>
+                </select>
+                <span class="arrow">➡</span> 
+                <select class="to" id="totime">
+                    <option value="year">Year</option>
+                    <option value="day">Day</option>
+                    <option value="hour">Hour</option>
+                    <option value="minute">Minute</option>
+                    <option value="second">Seconds</option>
+                    <option value="millisecond">Milliseconds</option>
+                </select>
+                <br/>
+                <br/>
+                <button class="btn" onclick="timefn()">CONVERT</button>
+                <br/>
+                <br/>
+                <div class="res"><div id="resultboxtim"></div></div>
+
+            </div>
+
+            <div class="conversion-box" id="anglebox">
+                <h2>Angles</h2>
+                <input class="input" type="number" placeholder="Enter value"/>
+                <select class="from" id="fromangle">
+                    <option value="radian" >Radians</option>
+                    <option value="degree" >Degrees</option>
+                </select>
+                <span class="arrow">➡</span> 
+                <select class="to" id="toangle">
+                    <option value="radian" >Radians</option>
+                    <option value="degree" >Degrees</option>
+                </select>
+                <br/>
+                <br/>
+                <button class="btn" onclick="anglefn()">CONVERT</button>
+                <br/>
+                <br/>
+                <div class="res"><div id="resultboxang"></div></div>
+
+            </div>
+
+         </div>
+         
+         <div class="end">Copyright&copy;NAMITASATHISH AllRightsReserved</div>
+    </body>
+    
+
+    <script src="script.js"></script> 
+</html>
