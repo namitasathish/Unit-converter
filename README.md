@@ -1,2 +1,3 @@
 # Unit-converter
-A user friendly Unit converter tool that can convert across various units of physical quantities
+	This can convert across various physical quantities.Users can switch between different units of measurement, ensures better user interaction
+
